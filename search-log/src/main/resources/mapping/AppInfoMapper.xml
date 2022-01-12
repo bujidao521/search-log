@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.log.search.mapper.AppInfoMapper">
+  <resultMap id="BaseResultMap" type="com.log.search.entity.AppInfo">
+    <!--@Table app_info-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="app_name" jdbcType="VARCHAR" property="appName" />
+    <result column="log_path" jdbcType="VARCHAR" property="logPath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, app_name, log_path
+  </sql>
+
+  <select id="listOption" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from app_info ao
+      WHERE (select count(1) from app_instance ais where ais.app_id=ao.id) >0
+    <if test="keyword != null || keyword.trim()==''">
+      and app_name like "%"#{keyword,jdbcType=VARCHAR}"%"
+    </if>
+  </select>
+</mapper>

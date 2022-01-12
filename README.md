@@ -1,38 +1,76 @@
 # Slog-linux多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，超级服务轻量化
 
-#### 介绍
-Slog-linux多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，超级服务轻量化
+## 介绍
+多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，超级服务轻量化
+很多公司查询日志的特别难受，10多个服务器，需要一个一个查，影响效率，
+
+项目目前还存在一些问题需要后续优化：
+
+1、搜索无校验；
+
+2、搜索命令没有加命令过滤；
 
 
-#### 软件架构
-软件架构说明
+### 1、为什么不用elk？
 
+有的系统没有接入elk，而且elk查询日志一般只能单行查询，使用不是特别友好；
 
-#### 安装教程
+### 2、为什么不直接在linux上查询？
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+linux查询文件查询行数太多，很难找自己想找的东西，而且服务部署多个机器后，每个服务都需要查询一次日志，影响工作效率；
 
-#### 使用说明
+### 3、Slog的优势：
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+可以基于关键字进行多行查询，如关键字上下N行；
 
-#### 参与贡献
+可以多服务器、多文件同时查询；
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+项目还在优化中......
 
+## Slog使用介绍
 
-#### 特技
+模块：应用，实例，日志查询，全文查询
+### 应用管理
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+应用界面：
+
+![image-20211227213638969](README.assets/image-20211227213638969.png)
+
+新建应用：
+
+![image-20211227213705501](README.assets/image-20211227213705501.png)
+
+查看实例->新建实例：
+
+![image-20211227213754440](README.assets/image-20211227213754440.png)
+
+### 日志查询：
+
+应用：之前创建的应用
+
+文件：系统的文件名称
+
+行数：文件的后N行
+
+关键字：要查询的文字，也支持正则
+
+命令：Cn行，上下n行，An，后n行，Bn前n行，参考linux命令
+
+查询后对应的字段都会做缓存；以便于下次查询比较方便；
+
+![image-20211227213922298](README.assets/image-20211227213922298.png)
+
+查询文件：
+
+![image-20211227214055143](README.assets/image-20211227214055143.png)
+
+查询日志：
+
+![image-20211227214125935](README.assets/image-20211227214125935.png)
+
+日志全文查询：
+
+为了方便查询最新日志，所以提供后n行的查询
+
+![image-20211227214217590](README.assets/image-20211227214217590.png)
+

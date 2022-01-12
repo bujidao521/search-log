@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.log.search.mapper.AppInstanceMapper">
+  <resultMap id="BaseResultMap" type="com.log.search.entity.AppInstance">
+    <!--@Table app_instance-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="app_id" jdbcType="VARCHAR" property="appId" />
+    <result column="shell_host" jdbcType="VARCHAR" property="shellHost" />
+    <result column="shell_port" jdbcType="INTEGER" property="shellPort" />
+    <result column="shell_user" jdbcType="VARCHAR" property="shellUser" />
+    <result column="shell_pass" jdbcType="VARCHAR" property="shellPass" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="log_path" jdbcType="VARCHAR" property="logPath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, app_id, shell_host, shell_port, shell_user, shell_pass, create_user, create_time,
+    update_user, update_time, log_path
+  </sql>
+  <update id="updateById">
+    update app_instance
+    <set>
+      <if test="instance.appId != null">
+        app_id = #{instance.appId,jdbcType=VARCHAR},
+      </if>
+        shell_host = #{instance.shellHost,jdbcType=VARCHAR},
+        shell_port = #{instance.shellPort,jdbcType=INTEGER},
+        shell_user = #{instance.shellUser,jdbcType=VARCHAR},
+        shell_pass = #{instance.shellPass,jdbcType=VARCHAR},
+        log_path = #{instance.logPath,jdbcType=VARCHAR},
+        <if test="instance.updateUser != null">
+        update_user = #{instance.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="instance.updateTime != null">
+        update_time = #{instance.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id=#{instance.id,jdbcType=VARCHAR}
+  </update>
+</mapper>

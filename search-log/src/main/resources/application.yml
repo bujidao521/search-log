@@ -1,0 +1,30 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: search-log
+  profiles:
+    active: dev
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    type-aliases-package: com.report.domain
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapping/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+#showSql
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com:
+      example:
+        mapper : info
+

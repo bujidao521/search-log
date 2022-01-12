@@ -1,37 +1,11 @@
-# Slog-linux多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，超级服务轻量化
+# linux多实例多文件，批量日志查询，服务轻量化java后台+vue（elementUI），简单高效
 
-#### Description
-Slog-linux多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，超级服务轻量化
+#### 描述
+服务器多实例多文件，批量日志查询，java后台+vue（elementUI），简单高效，因为服务轻量化
+不想吐槽很多公司查询日志的难受，10多个服务器，每个服务器10多个日志文件，一个一个找，过于低效；
+就写了这个logSearch，方便高效；查起来快
+项目还存在一些问题还在优化：
 
+1、搜索无校验；
 
-#### Software Architecture
-Software architecture description
-
-#### Installation
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+2、搜索命令没有加命令过滤；

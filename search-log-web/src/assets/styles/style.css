@@ -1,0 +1,26 @@
+
+.el-table{
+    color: black;
+}
+.el-table--mini, .el-table--small, .el-table__expand-icon{
+    font-size: 15px;
+}
+.el-table__body tr.current-row>td.el-table__cell{
+    background-color: #8cc5ff;
+}
+.el-collapse-item__header{
+    padding-left: 10px;
+    height: 30px;
+    font-weight:700;
+    background: #8cc5ff;
+}
+.el-card__body{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.log-search-card .el-collapse-item__wrap{
+    background: #dadada;
+}
+.log-search-card{
+    background: #dadada;
+}
