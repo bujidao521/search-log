@@ -1,4 +1,4 @@
-# Slog用于linux多实例多文件，批量日志查询，基于java+vue（elementUI），简单高效，超级服务轻量化
+# Slog用于linux多实例多文件，批量日志查询，基于java+vue（elementUI），简单高效，服务超轻量化
 
 ##访问地址
 http://162.14.116.178:9900
