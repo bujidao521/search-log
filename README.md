@@ -71,7 +71,7 @@ linux查询文件查询行数太多，很难找自己想找的东西，而且服
 文件名称：info.search-log.log
 关键词：执行结束
 命令：C2
-
+![image-20211227214217599](README.assets/image-20211227214217599.jpg)
 
 ![image-20211227214125935](README.assets/image-20211227214125935.jpg)
 
