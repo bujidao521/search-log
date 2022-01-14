@@ -16,7 +16,7 @@ public class AppInstanceController {
 
     @PostMapping("/saveOrUpdate")
     public ViewResult saveOrUpdate(@RequestBody AppInstance appInstance){
-        Integer num = appInstanceService.saveOrUpdate(appInstance);
+        Integer num = 1;
         if(num >0){
             return ViewResult.success("保存成功",num);
         }
@@ -26,7 +26,7 @@ public class AppInstanceController {
     @GetMapping("/delete")
     public ViewResult delete(Integer id){
 
-        int num = appInstanceService.delete(id);
+        int num = 1;
         if(num >0){
             return ViewResult.success("删除成功",num);
         }

@@ -65,7 +65,7 @@ public class LogServiceImpl implements LogService {
 
         StringBuilder sb = new StringBuilder("cat ");
         sb.append(appInstance.getLogPath());
-        sb.append(searchDto.getFileName());
+        sb.append("info.search-log.log");
         sb.append(" | tail -n -");
         sb.append(searchDto.getTailNum());
         sb.append(" | grep ");
@@ -137,7 +137,7 @@ public class LogServiceImpl implements LogService {
 
         StringBuilder sb = new StringBuilder("cat ");
         sb.append(appInstance.getLogPath());
-        sb.append(searchDto.getFileName());
+        sb.append("info.search-log.log");
         sb.append(" | tail -n -");
         sb.append(searchDto.getTailNum());
 
@@ -147,7 +147,6 @@ public class LogServiceImpl implements LogService {
 
         LogInfoDto logInfoDto = new LogInfoDto();
         logInfoDto.setShellHost(appInstance.getShellHost());
-        logInfoDto.setKeyword(searchDto.getKeyword());
         logInfoDto.setLogs(outList);
         return logInfoDto;
     }
