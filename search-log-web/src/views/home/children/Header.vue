@@ -9,7 +9,7 @@
 
 <script>
     import {mapState} from "vuex";
-    import {MUTIFYCOLSPANVAL} from "@/store/mutation-type"
+    import {MUTIFY_COLSPAN_VAL} from "@/store/mutation-type"
 
     export default {
         name: "Header",
@@ -23,8 +23,9 @@
         },
         methods:{
             mutifyColspan(){
-                this.$store.commit(MUTIFYCOLSPANVAL);
-            }
+                this.$store.commit(MUTIFY_COLSPAN_VAL);
+            },
+
         }
     }
 </script>
