@@ -1,5 +1,5 @@
 <template>
-    <el-menu class="home-menu"  @select="(index)=>handleSelect(index)"
+    <el-menu class="home-menu" 
              :default-active="activeMenu" :collapse="!isColspan"
              unique-opened router
              background-color="#545c64"
@@ -34,10 +34,11 @@
             }
         },
         mounted() {
+            //this.$router.replace(this.$route.path)
+            this.mutifyTabLValist("add",this.$route.path)
         },
         computed:{
             activeMenu(){
-                this.handleSelect(this.$route.path)
                 return this.$route.path
             },
             ...mapState(["isColspan"])
@@ -60,16 +61,15 @@
                 };
                 this.$store.commit(MUTIFY_TAB_VAL_LIST,param);
             },
-            handleSelect(path) {
-                this.mutifyTabLValist("add",path)
-                this.$router.replace(path)
-
-            },
 
         },
         watch:{
+            //监控活动的菜单，进行页签切换
             activeMenu(newName, oldName){
-
+                if(newName != oldName){
+                    //增加页签，并打开对应页签
+                    this.mutifyTabLValist("add",this.$route.path)
+                }
             }
         },
 

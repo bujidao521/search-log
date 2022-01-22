@@ -64,9 +64,15 @@
             }
         },
         watch:{
+            //如果页签切换，则对页签活动的
             openTabVal(newName, oldName){
                 if(newName != oldName ){
-                    this.activeName=newName
+                    this.activeName=newName;
+                    //未了防止重复调用，判断不等则调用
+                    if(this.$route.path != newName){
+                        this.$router.replace(newName)
+                    }
+
                 }
             },
 
