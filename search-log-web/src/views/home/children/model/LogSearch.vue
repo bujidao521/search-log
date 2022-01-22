@@ -32,7 +32,7 @@
                     </el-col>
                     <el-col :span="8">
                         <el-form-item label="行数">
-                            <el-input-number   v-model="param.tailNum" controls-position="right" placeholder="文件后n行" :step="500"  :min="1" :max="500000"></el-input-number>
+                            <el-input-number   v-model="param.tailNum" controls-position="right" placeholder="文件后n行" :step="500"  :min="1" ></el-input-number>
                         </el-form-item>
                     </el-col>
                 </el-row>
