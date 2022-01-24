@@ -29,6 +29,10 @@ public class AppInstanceServiceImpl  implements AppInstanceService{
             appInstance.setLogPath(appInfo.getLogPath());
         }
         if(appInstance.getId() == null){
+            //不是以/结尾，则默认加上斜线
+            if(!appInstance.getLogPath().endsWith("/")){
+                appInstance.setLogPath(appInstance.getLogPath() +"/");
+            }
             appInstance.setUpdateTime(new Date());
             appInstance.setCreateTime(new Date());
             return instanceMapper.insert(appInstance);

@@ -30,6 +30,13 @@ public class AppInfoServiceImpl  implements AppInfoService{
 
     @Override
     public Integer saveOrUpdate(AppInfo appInfo) {
+        //不是以/结尾，则默认加上斜线
+        if(appInfo.getLogPath() == null){
+            appInfo.setLogPath("/");
+        }else if(!appInfo.getLogPath().trim().endsWith("/")){
+            appInfo.setLogPath(appInfo.getLogPath().trim() +"/");
+        }
+
         if(appInfo.getId() == null){
             appInfo.setUpdateTime(new Date());
             appInfo.setCreateTime(new Date());
